@@ -13,8 +13,10 @@
     <h1>Hangman Game</h1>
     <p>Find the hidden word - Enter a letter</p>
 
+    <!-- game container -->
     <div class="game-container">
-        <svg height="250" width="200" class="figure-container">
+        <!-- Figure container -->
+        <svg height="250" width="200" class="game-container-figure">
             <!-- Rod -->
             <line x1="60" y1="20" x2="140" y2="20"></line>
             <line x1="140" y1="20" x2="140" y2="50"></line>
@@ -30,8 +32,35 @@
             <!-- Legs -->
             <line x1="140" y1="150" x2="120" y2="180" class="figure-container-part"></line>
             <line x1="140" y1="150" x2="160" y2="180" class="figure-container-part"></line>
-
         </svg>
+        <!-- Wrong letter container -->
+        <div class="game-container-wrong-letter">
+            <div class="wrong-letters">
+                <p>Wrong</p>
+                <span>e,r,t,y</span>
+            </div>
+        </div>
+        <!-- Words -->
+        <div class="game-container-word" id="word">
+            <div class="letter">h</div>
+            <div class="letter">e</div>
+            <div class="letter">l</div>
+            <div class="letter">l</div>
+            <div class="letter">o</div>
+        </div>
+    </div>
+
+    <!-- container for final message -->
+    <div class="popup-container" id="popup-container">
+        <div class="popup">
+            <h2 id="final-message">You Have Won!</h2>
+            <button id="play-button">Play Again</button>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification-container" id="notification-container">
+        <p>You have already entered this letter</p>
     </div>
 
     <script src="src/js/script.js"></script>
