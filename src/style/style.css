@@ -1,13 +1,104 @@
 body {
-  background-color: #34495e;
+  background: #23074d;
+  background: -webkit-gradient(linear, left bottom, left top, from(#cc5333), to(#23074d));
+  background: linear-gradient(to top, #cc5333, #23074d);
   color: #f1f1f1;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+  font-family: Arial, Helvetica, sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-.figure-container {
+h1 {
+  margin: 20px 0 0;
+}
+
+.game-container {
+  position: relative;
+  padding: 20px 30px;
+  margin: auto;
+  height: 350px;
+  width: 450px;
+}
+
+.game-container-figure {
   fill: transparent;
   stroke: #fff;
   stroke-width: 4px;
   -webkit-text-stroke-width: 4px;
   stroke-linecap: round;
+}
+
+.game-container-figure-part {
+  display: none;
+}
+
+.game-container-wrong-letter {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: right;
+}
+
+.game-container-wrong-letter p {
+  margin: 0 0 5px;
+}
+
+.game-container-wrong-letter span {
+  font-size: 24px;
+}
+
+.game-container-word {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.game-container-word .letter {
+  border-bottom: 3px solid #26114C;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 30px;
+  margin: 0 3px;
+  width: 20px;
+  height: 45px;
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    background: #23074d;
+  }
 }
 /*# sourceMappingURL=style.css.map */
