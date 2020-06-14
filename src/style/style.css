@@ -42,7 +42,7 @@ h1 {
   stroke-linecap: round;
 }
 
-.game-container-figure-part {
+.game-container-figure .figure-part {
   display: none;
 }
 
@@ -94,6 +94,71 @@ h1 {
   margin: 0 3px;
   width: 20px;
   height: 45px;
+}
+
+.popup-container {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.popup-container .popup {
+  background: #2980b9;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+.popup-container .popup button {
+  cursor: pointer;
+  color: #2980b9;
+  background-color: #fff;
+  border: 0;
+  margin-top: 20px;
+  padding: 12px 20px;
+  font-size: 16px;
+}
+
+.popup-container .popup button:active {
+  -webkit-transform: scale(0.92);
+          transform: scale(0.92);
+}
+
+.popup-container .popup button:focus {
+  outline: 0;
+}
+
+.notification-container {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px 10px 0 0;
+  padding: 15px 20px;
+  position: absolute;
+  bottom: -100px;
+  -webkit-transition: -webkit-transform 0.4s ease-in-out;
+  transition: -webkit-transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+}
+
+.notification-container p {
+  margin: 0;
+}
+
+.notification-container.show {
+  -webkit-transform: translateY(-100px);
+          transform: translateY(-100px);
 }
 
 @media screen and (max-width: 500px) {
