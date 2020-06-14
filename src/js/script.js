@@ -14,7 +14,7 @@ const words = ['application', 'programming', 'interface', 'wizard'];
 // get random words
 let selectedWord = words[Math.floor(Math.random() * words.length)];
 
-const correctLetters = ['w','i','z','a','r','d'];
+const correctLetters = [];
 const wrongLetters = [];
 // show hidden word
 const displayWord = () => {
@@ -34,5 +34,46 @@ const displayWord = () => {
         popup.style.display = 'flex';
     }
 }
+
+// update the wrong letters 
+const updateWrongLettersEl = () => {
+    console.log("updated! ")
+}
+
+// show notification 
+const showNotification = () => {
+    notification.classList.add("show");
+
+    setTimeout(() => {
+        notification.classList.remove("show")
+    }, 2000);
+}
+
+// keydown letter press 
+window.addEventListener("keydown", e => {
+    // range of letters
+    if (e.keyCode >= 65 && e.keyCode <= 90) {
+        const letter = e.key;
+        if (selectedWord.includes(letter)) {
+            if (!correctLetters.includes(letter)) {
+                correctLetters.push(letter);
+                displayWord()
+            }
+            else {
+                showNotification();
+            }
+        }
+    }
+    else {
+        if (!wrongLetters.includes(letter)) {
+            wrongLetters.push(letter);
+
+            updateWrongLettersEl();
+        }
+        else {
+            showNotification();
+        }
+    }
+})
 
 displayWord();
